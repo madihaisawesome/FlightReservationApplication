@@ -1,7 +1,21 @@
 public class PaymentController {
 
-    //public Reservation getReservation(int reservationID)
+    //private DatabaseManager db;
+    
+    public Reservation getReservation(int reservationID) {
+        return new Reservation();
+    }
 
-    //public String generateReceipt(Payment p)
+    public Payment processPayment(Reservation r, PaymentStrategy card) {
+        return new Payment();
+    }
+
+    public String generateReceipt(Payment p) {
+        return "test";
+    }
+
+    private boolean validateCard(PaymentStrategy card) {
+        return true;
+    }
     
 }
