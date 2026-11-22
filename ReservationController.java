@@ -11,6 +11,8 @@ public class ReservationController {
 
     //public List<Reservation> getCustomerReservations(int customerID)
 
-    //public String generateConfirmation(Reservation r)
+    public String generateConfirmation(Reservation r) {
+        return "Confirmation string.";
+    }
     
 }
