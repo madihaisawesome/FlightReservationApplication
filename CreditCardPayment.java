@@ -15,4 +15,20 @@ public class CreditCardPayment implements PaymentStrategy {
     public boolean pay(double amount) {
         return true;
     }
+
+    public final String getCardNumber() {
+        return this.cardNumber;
+    }
+
+    public final String getCardHolder() {
+        return this.cardHolder;
+    }
+
+    public final String getExpiryDate() {
+        return this.expiryDate;
+    }
+
+    public final String getCvv() {
+        return this.cvv;
+    }
 }

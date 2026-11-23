@@ -11,4 +11,11 @@ public class DebitCardPayment implements PaymentStrategy {
     public boolean pay(double amount) {
         return true;
     }
+
+    public final String getCardNumber() {
+        return this.cardNumber;
+    }
+    public final String getBankName() {
+        return this.bankName;
+    } 
 }
