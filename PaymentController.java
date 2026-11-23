@@ -3,7 +3,7 @@ public class PaymentController {
     //private DatabaseManager db;
     
     public Reservation getReservation(int reservationID) {
-        return new Reservation();
+        return new Reservation(); //get reservation
     }
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {

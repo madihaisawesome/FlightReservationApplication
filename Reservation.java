@@ -11,6 +11,7 @@ public class Reservation {
     private String status;
     private Payment payment;
 
+    //0..1 payment
     //public Reservation(Customer customer, Flight flight, int numSeats, Payment payment)
 
     public double getTotalPrice() {

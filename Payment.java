@@ -20,4 +20,31 @@ public class Payment {
     public boolean process() {
         return true;
     }
+
+    // Getters and setters
+    
+    public final PaymentStrategy getMethod() {
+        return this.method;
+    }
+    public void setMethod(PaymentStrategy method) {
+        this.method = method;
+    }
+
+    public final double getAmount() {
+        return this.amount;
+    }
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public final String getStatus() {
+        return this.status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public final int getPaymentID() {
+        return this.paymentID;
+    }
 }
