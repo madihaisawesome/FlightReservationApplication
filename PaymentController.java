@@ -7,7 +7,9 @@ public class PaymentController {
     }
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {
-        return new Payment();
+       Payment newPayment = new Payment(r.getTotalPrice(), card);
+       newPayment.process();
+       return newPayment;
     }
 
     public String generateReceipt(Payment p) {

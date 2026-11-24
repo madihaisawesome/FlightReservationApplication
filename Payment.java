@@ -18,11 +18,13 @@ public class Payment {
     }
 
     public boolean process() {
-        return true;
+        boolean success = method.pay(amount);
+        return success;
     }
 
-    // Getters and setters
     
+    // Getters and setters
+
     public final PaymentStrategy getMethod() {
         return this.method;
     }
