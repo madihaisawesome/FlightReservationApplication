@@ -7,7 +7,7 @@ public class PaymentController {
     }
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {
-       Payment newPayment = new Payment(r.getTotalPrice(), card);
+       Payment newPayment = r.getPayment();
        newPayment.process();
        return newPayment;
     }
