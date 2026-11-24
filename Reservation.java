@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Reservation {
     private int reservationID;
-    //private Customer customer;
-    //private Flight flight;
+    //private Customer customer; // teammate: Customer Management
+    private Flight flight;
     private int numSeats;
     private List<String> seatNumbers;
     private LocalDate bookingDate;
