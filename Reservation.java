@@ -17,11 +17,10 @@ public class Reservation {
 
     public double getTotalPrice() {        
         return payment.getAmount();
-
     }
 
     public void confirm() {
-
+        
     }
 
     public void cancel() {

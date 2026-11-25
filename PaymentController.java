@@ -1,9 +1,13 @@
 public class PaymentController {
 
-    //private DatabaseManager db;
-    
+    private DatabaseManager db;
+
+    public PaymentController() {
+        this.db = DatabaseManager.getInstance();
+    }
+
     public Reservation getReservation(int reservationID) {
-        return new Reservation(); //get reservation
+        return new Reservation(); //get reservation from db
     }
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {
@@ -13,10 +17,11 @@ public class PaymentController {
     }
 
     public String generateReceipt(Payment p) {
+        //just put all payment information
         return "test";
     }
 
-    private boolean validateCard(PaymentStrategy card) {
+    private boolean validateCard(PaymentStrategy card) { //simulation
         return true;
     }
     
