@@ -19,13 +19,13 @@ public class Payment {
 
     public boolean process() {
         boolean success = method.pay(amount);
-
+        
         if (success) {
             this.status = "COMPLETED";
         } else {
             this.status = "FAILED";
         }
-        
+
         return success;
     }
 
