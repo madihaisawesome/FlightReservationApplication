@@ -12,8 +12,14 @@ public class PaymentController {
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {
        Payment newPayment = r.getPayment();
+       if (newPayment == null || validateCard(card) == false) {
+            return null;
+       }
+
        newPayment.setMethod(card);
        newPayment.process();
+
+       db.savePayment(newPayment);
        return newPayment;
     }
 
@@ -36,8 +42,11 @@ public class PaymentController {
     }
 
     private boolean validateCard(PaymentStrategy card) {
-        System.out.println("Validating card...");\
+        System.out.println("Validating card...");
         // In an actual payment processor, would check the card against the provider and see if it exists
+        if (card == null) {
+            return false;
+        }
         return true;
     }
     

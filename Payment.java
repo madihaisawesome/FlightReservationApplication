@@ -13,12 +13,19 @@ public class Payment {
         this.amount = amount;
         this.method = method;
         this.date = LocalDate.now();
-        this.status = "Processing";
+        this.status = "PENDING";
 
     }
 
     public boolean process() {
         boolean success = method.pay(amount);
+
+        if (success) {
+            this.status = "COMPLETED";
+        } else {
+            this.status = "FAILED";
+        }
+        
         return success;
     }
 

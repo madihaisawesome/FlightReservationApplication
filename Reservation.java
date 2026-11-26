@@ -13,18 +13,27 @@ public class Reservation {
 
     //0..1 payment
 
-    //public Reservation(Customer customer, Flight flight, int numSeats, Payment payment)
+    public Reservation(Customer customer, Flight flight, int numSeats, Payment payment) {
+        this.customer = customer;
+        this.flight = flight;
+        this.payment = payment;
+        this.numSeats = numSeats;
+
+        this.bookingDate = LocalDate.now();
+        this.status = "PENDING";
+        // set reservation id
+    }
 
     public double getTotalPrice() {        
         return payment.getAmount();
     }
 
     public void confirm() {
-        
+        this.status = "CONFIRMED";
     }
 
     public void cancel() {
-        
+        this.status = "CANCELLED";
     }
 
     // Getters and setters
