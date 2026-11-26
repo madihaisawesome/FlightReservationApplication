@@ -41,7 +41,7 @@ public class DatabaseManager {
     }
 
     private void createTables() throws SQLException {
-        String sql = "CREATE TABLE IF NOT EXISTS flights ("
+        String sql1 = "CREATE TABLE IF NOT EXISTS flights ("
                 + "flightNumber TEXT PRIMARY KEY,"
                 + "airline TEXT NOT NULL,"
                 + "origin TEXT NOT NULL,"
@@ -54,8 +54,10 @@ public class DatabaseManager {
                 + "bookedSeats INTEGER NOT NULL,"
                 + "status TEXT NOT NULL"
                 + ")";
+         
+        /* NEED to put statements for other entities to be stored in the database: Payment, Reservation, Customer, FlightAgent, SystemAdmin (maybe all under user?), Promotion*/
         try (Statement stmt = connection.createStatement()) {
-            stmt.execute(sql);
+            stmt.execute(sql1);
         }
     }
 
