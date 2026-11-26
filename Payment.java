@@ -49,4 +49,9 @@ public class Payment {
     public final int getPaymentID() {
         return this.paymentID;
     }
+
+    public final LocalDate getDate() {
+        return this.date;
+    }
+
 }

@@ -7,21 +7,37 @@ public class PaymentController {
     }
 
     public Reservation getReservation(int reservationID) {
-        return new Reservation(); //get reservation from db
+        return db.getReservation(reservationID);
     }
 
     public Payment processPayment(Reservation r, PaymentStrategy card) {
        Payment newPayment = r.getPayment();
+       newPayment.setMethod(card);
        newPayment.process();
        return newPayment;
     }
 
-    public String generateReceipt(Payment p) {
-        //just put all payment information
-        return "test";
+    public String generateReceipt(Payment p, Customer c) {
+        String receipt = """
+        =====
+        FLIGHT RESERVATION APPLICATION
+        Payment ID %d
+        =====
+
+        DATE: %s
+        CUSTOMER: %s
+
+        PAYMENT METHOD: %s
+
+        TOTAL: %f
+
+        """.formatted(p.getPaymentID(), p.getDate(), c.getName(), p.getMethod().getClass().getSimpleName(), p.getAmount());
+        return receipt;
     }
 
-    private boolean validateCard(PaymentStrategy card) { //simulation
+    private boolean validateCard(PaymentStrategy card) {
+        System.out.println("Validating card...");\
+        // In an actual payment processor, would check the card against the provider and see if it exists
         return true;
     }
     
