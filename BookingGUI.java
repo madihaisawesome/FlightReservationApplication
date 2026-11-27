@@ -84,7 +84,7 @@ public class BookingGUI extends JFrame {
 
         Customer customer = new Customer(id, name, contact, id, name);
         
-        boolean success = reservationController.processBooking(customer, selectedFlight, seat);
+        boolean success = reservationController.createReservation(customer, selectedFlight, seat);
 
         if (success) {
             JOptionPane.showMessageDialog(this, "Booking confirmed! Proceeding to payment.");
