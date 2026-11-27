@@ -5,6 +5,12 @@ public class Payment {
     private double amount;
     private LocalDate date;
     private String status; // I think it may be better to use an enum for this?
+
+    private enum statusEnum {
+        PENDING,
+        FAILED,
+        COMPLETED
+    }
     private PaymentStrategy method;
 
 
