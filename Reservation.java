@@ -13,10 +13,9 @@ public class Reservation {
 
     //0..1 payment
 
-    public Reservation(Customer customer, Flight flight, int numSeats, Payment payment) {
+    public Reservation(Customer customer, Flight flight, int numSeats) {
         this.customer = customer;
         this.flight = flight;
-        this.payment = payment;
         this.numSeats = numSeats;
 
         this.bookingDate = LocalDate.now();

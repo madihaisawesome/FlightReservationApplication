@@ -7,7 +7,10 @@ public class ReservationController {
         this.db = DatabaseManager.getInstance();
     }
 
-    //public Reservation createReservation(Customer c, Flight f, int seats)
+    public Reservation createReservation(Customer c, Flight f, int seats) {
+        Reservation newReservation = new Reservation(c, f, seats);
+        //save reservation to database!
+    }
 
     public void cancelReservation(int reservationID) {
         Reservation reservation = db.getReservation(reservationID);
